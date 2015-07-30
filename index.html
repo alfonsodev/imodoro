@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<link href="css/main.css" rel="stylesheet" type="text/css">
+	<style>
+	    textarea { border: none; width: 190px; resize: none; font-size: 50px}
+	    textarea:focus {outline: none; }
+	    .display: {     box-shadow: 10px 10px 5px #888888;;}
+	</style>
+	</head>
+	<body>
+	<main>
+		<input placeholder="Search, or say Google" x-webkit-speech autocomplete="off" />
+		<header></header>
+		<div id="timer"> </div>
+		<div id="list"> </div>
+	</main>
+	</body>
+	<script type="text/javascript" src="./jspm_packages/system.js"></script>
+	<script type="text/javascript" src="./config.js"></script>
+	<script> System.import('app/main'); </script>
+</html>
