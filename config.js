@@ -1,5 +1,5 @@
 System.config({
-  "baseURL": "/",
+  "baseURL": "/imodoro",
   "transpiler": "babel",
   "babelOptions": {
     "optional": [
