@@ -5,7 +5,7 @@ import React from 'react'
 export default class List extends React.Component {
 	constructor(props) {
 		super(props)
-		this.state = { tasks: ['one'] }
+		this.state = { tasks: [] }
 		console.log('constructor ')
 	}
 	componentDidMount() {
@@ -16,11 +16,13 @@ export default class List extends React.Component {
 		}, false);
 	}
 	render() {
+		let tasks = this.state.tasks.map(function(task) {
+			return (<li>{task}</li>)
+		});
 		return (
 		<div className="card">
 			<ul>
-				<li>buy chairs</li>
-
+			{tasks}
 			</ul>
 		</div>
 		);

@@ -6,6 +6,11 @@ export default class Timer extends React.Component {
         this.intervals.push(setInterval(fn, ms));
     }
 
+	pad (str, max) {
+	  str = str.toString();
+	  return str.length < max ? this.pad("0" + str, max) : str;
+	}
+
     componentWillUnmount() {
        this.intervals.forEach(clearInterval);
     }
@@ -32,10 +37,11 @@ export default class Timer extends React.Component {
     }
 
 	render() {
+		var time = this.pad(Math.floor(this.state.sec/60, 10),2) + ":" + this.pad(Math.floor(this.state.sec%60, 10),2);
 		return (
 			<div className="card">
 				<div  className="display" >	
-					<textarea defaultValue={Math.floor(this.state.sec/60, 10)+ ":" + Math.floor(this.state.sec%60, 10)} value={Math.floor(this.state.sec/60,10) + ":" + Math.floor(this.state.sec%60)}></textarea>
+					<textarea defaultValue={time} value={time}></textarea>
 				</div>
 				<div className="buttons">
 				<a href="#" onClick={this.handleStart}>Start</a> 
