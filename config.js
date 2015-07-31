@@ -6,7 +6,6 @@ System.config({
       "runtime"
     ],
     "blacklist": []
-
   },
   "paths": {
     "*": "*.js",
