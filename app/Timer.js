@@ -2,7 +2,6 @@
 import React from 'react'
 
 export default class Timer extends React.Component {
-
     setInterval(fn, ms) {
         this.intervals.push(setInterval(fn, ms));
     }
@@ -14,18 +13,17 @@ export default class Timer extends React.Component {
 	constructor(props) {
 		super(props);
 	    this.state = {  sec: 20 * 60 };
-//		this.mixins = [SetIntervalMixin];
+	    // this.mixins = [SetIntervalMixin];
         this.intervals = [];
         this.handleStart = this.handleStart.bind(this)
         this.handleStop = this.handleStop.bind(this)
-
     }
 
 	handleStart() {
-    	this.setState({sec: 10})
-    		this.setInterval(() => {
-		    	this.setState({sec: this.state.sec -1})
-		    }, 1000);
+	    this.setState({sec: 20 * 60 });
+		this.setInterval(() => {
+	    	this.setState({sec: this.state.sec -1})
+	    }, 1000);
     }
 
     handleStop() {
